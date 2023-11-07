@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>DNSedit - exported project</title>
+    <meta property="og:title" content="DNSedit - exported project" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dn-sedit.css') }}">
+
+      <div class="dn-sedit-container">
+        <div class="dn-sedit-dns-edit">
+          <span class="dn-sedit-text">Edit DNS</span>
+          <img
+            alt="image23788"
+            src="{{ url_for('static', filename='public/external/image23788-o1y-200h.png') }}"
+            class="dn-sedit-image2"
+          />
+          <a href="{{ url_for('dns_over_https') }}" class="dn-sedit-save-button button">
+              <span class="dn-sedit-text02">Back</span>
+          </a>
+          <div class="dn-sedit-menu">
+            <span class="dn-sedit-text03">
+              <span class="dn-sedit-text04">Cyber</span>
+              <span>Vault</span>
+            </span>
+            <a href="/" class="dn-sedit-navlink1">
+              <div class="dn-sedit-home button">
+                <div class="dn-sedit-container01">
+                  <img
+                    alt="Home4229"
+                    src="{{ url_for('static', filename='public/external/home4229-6ztk-200h.png') }}"
+                    class="dn-sedit-home1"
+                  />
+                  <span class="dn-sedit-text06">Home</span>
+                </div>
+              </div>
+            </a>
+            <a href="firewall" class="dn-sedit-navlink2">
+              <div class="dn-sedit-firewall button">
+                <div class="dn-sedit-container02">
+                  <img
+                    alt="BrickWall4229"
+                    src="{{ url_for('static', filename='public/external/brickwall4229-fe85-200h.png') }}"
+                    class="dn-sedit-brick-wall"
+                  />
+                  <span class="dn-sedit-text07">Firewall</span>
+                </div>
+              </div>
+            </a>
+            <a href="vpn" class="dn-sedit-navlink3">
+              <div class="dn-sedit-vpn button">
+                <div class="dn-sedit-container03">
+                  <img
+                    alt="VPN4229"
+                    src="{{ url_for('static', filename='public/external/vpn4229-ur9r-200h.png') }}"
+                    class="dn-sedit-vpn1"
+                  />
+                  <span class="dn-sedit-text08"><span>VPN</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="dns-over-httpsdis" class="dn-sedit-navlink4">
+              <div class="dn-sedit-dns button">
+                <div class="dn-sedit-container04">
+                  <img
+                    alt="Lock4229"
+                    src="{{ url_for('static', filename='public/external/lock4229-ou9-200h.png') }}"
+                    class="dn-sedit-lock"
+                  />
+                  <span class="dn-sedit-text10"><span>Secure DNS</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="logs" class="dn-sedit-navlink5">
+              <div class="dn-sedit-logs button">
+                <div class="dn-sedit-container05">
+                  <img
+                    alt="List4229"
+                    src="{{ url_for('static', filename='public/external/list4229-fubg-200h.png') }}"
+                    class="dn-sedit-list"
+                  />
+                  <span class="dn-sedit-text12"><span>Logs</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="blacklisting" class="dn-sedit-navlink6">
+              <div class="dn-sedit-blacklist button">
+                <div class="dn-sedit-container06">
+                  <img
+                    alt="Multiplication4229"
+                    src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
+                    class="dn-sedit-multiplication"
+                  />
+                  <span class="dn-sedit-text14"><span>Blacklist</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="ids" class="dn-sedit-navlink7">
+              <div class="dn-sedit-ids button">
+                <div class="dn-sedit-container07">
+                  <span class="dn-sedit-text16"><span>IDS</span></span>
+                  <div class="dn-sedit-frameiconsetting4">
+                    <div class="dn-sedit-group">
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-kbig.svg') }}"
+                        class="dn-sedit-vector"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-ury6.svg') }}"
+                        class="dn-sedit-vector1"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-apps.svg') }}"
+                        class="dn-sedit-vector2"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-5fl.svg') }}"
+                        class="dn-sedit-vector3"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-ow93.svg') }}"
+                        class="dn-sedit-vector4"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-d3e.svg') }}"
+                        class="dn-sedit-vector5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="settings." class="dn-sedit-navlink8">
+              <div class="dn-sedit-settings button">
+                <div class="dn-sedit-container08">
+                  <span class="dn-sedit-text18"><span>Settings</span></span>
+                  <img
+                    alt="Gear4229"
+                    src="{{ url_for('static', filename='public/external/gear4229-cdoj-200h.png') }}"
+                    class="dn-sedit-gear"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+          <form action="{{ url_for('dns_edit', dns_id=record[0]) }}" method="post">
+          <div class="dn-sedit-container09">
+            <div class="dn-sedit-name">
+              <span class="dn-sedit-text20"><span>Name</span></span>
+              <input type="text" name="name" class="dn-sedit-avp-name input" value="{{ record[1] if record else '' }}" />
+            </div>
+            <div class="dn-sedit-type">
+              <span class="dn-sedit-text22">DNS</span>
+              <input type="text" name="dns" class="dn-sedit-avp-type input" value="{{ record[2] if record else '' }}" />
+            </div>
+            <div class="dn-sedit-server">
+              <span class="dn-sedit-text23">
+                <span>Backup DNS</span>
+                <br />
+              </span>
+              <input type="text" name="backup_dns" class="dn-sedit-avp-server input" value="{{ record[3] if record else '' }}" />
+            </div>
+          </div>
+          <button type="submit" id="dnsaddNew" class="dn-sedit-back-button button">
+            <span class="dn-sedit-text01">Save</span>
+          </button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>exported project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"
+      data-tag="font"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div>
+      <link rel="stylesheet" href="{{ url_for('static', filename='vpn.css') }}">
+
+      <div class="vpn-container">
+        <div class="vpn-vpn">
+          <span class="vpn-text"><span>VPN</span></span>
+          <span class="vpn-text02">
+            <span>
+              The VPN page lets you tunnel your traffic through another network
+              by a provider to ensure confidentiality and discreteness.
+            </span>
+          </span>
+          <img
+            alt="image23788"
+            src="{{ url_for('static', filename='public/external/image23788-m84j-200h.png') }}"
+            class="vpn-image2"
+          />
+          <a href="vpn-add" class="vpn-navlink">
+            <div id="vpnAdd" class="vpn-group352">
+              <span class="vpn-text04"><span>Add VPN</span></span>
+            </div>
+          </a>
+          <div class="vpn-vpns">
+            <div class="vpn-container01">
+              <span class="vpn-text06">Name</span>
+              <span class="vpn-text07">Status</span>
+              <span class="vpn-text08"><span>Settings</span></span>
+            </div>
+
+            {% for vpn in vpns %}
+            <div class="vpn-entry" data-vpn-id="{{ vpn[0] }}">
+                <span class="vpn-text10">{{ vpn[1] }}</span>
+                <span class="vpn-text11"><span id="statusText-{{ vpn[0] }}">{{ vpn[6] }}</span></span>
+                <div class="vpn-button-container">
+                <div id="statusButton-{{ vpn[0] }}" class="{{ 'vpn-deactivate' if vpn[6] == 'Active' else 'vpn-activate' }}" onclick="toggleVPNStatus({{ vpn[0] }})">
+                  <span class="vpn-text13"><span>{{ 'Disable' if vpn[6] == 'Active' else 'Activate' }}</span></span>
+                </div>
+                <a href="{{ url_for('vpn_edit', vpn_id=vpn[0]) }}" class="vpn-edit button">
+                  <span class="vpn-text15"><span>Edit</span></span>
+                </a>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+
+          <div class="vpn-menu">
+            <span>Text</span>
+            <span class="vpn-text20">
+              <span class="vpn-text21">Cyber</span>
+              <span>Vault</span>
+            </span>
+            <a href="/" class="vpn-navlink1">
+              <div class="vpn-home button">
+                <div class="vpn-container02">
+                  <img
+                    alt="Home4229"
+                    src="{{ url_for('static', filename='public/external/home4229-6ztk-200h.png') }}"
+                    class="vpn-home1"
+                  />
+                  <span class="vpn-text23">Home</span>
+                </div>
+              </div>
+            </a>
+            <a href="firewall" class="vpn-navlink2">
+              <div class="vpn-firewall button">
+                <div class="vpn-container03">
+                  <img
+                    alt="BrickWall4229"
+                    src="{{ url_for('static', filename='public/external/brickwall4229-fe85-200h.png') }}"
+                    class="vpn-brick-wall"
+                  />
+                  <span class="vpn-text24">Firewall</span>
+                </div>
+              </div>
+            </a>
+            <a href="vpn" class="vpn-navlink3">
+              <div class="vpn-vpn1 button">
+                <div class="vpn-container04">
+                  <img
+                    alt="VPN4229"
+                    src="{{ url_for('static', filename='public/external/vpn4229-ur9r-200h.png') }}"
+                    class="vpn-vpn2"
+                  />
+                  <span class="vpn-text25"><span>VPN</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="dns-over-httpsdis" class="vpn-navlink4">
+              <div class="vpn-dns button">
+                <div class="vpn-container05">
+                  <img
+                    alt="Lock4229"
+                    src="{{ url_for('static', filename='public/external/lock4229-ou9-200h.png') }}"
+                    class="vpn-lock"
+                  />
+                  <span class="vpn-text27"><span>Secure DNS</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="logs" class="vpn-navlink5">
+              <div class="vpn-logs button">
+                <div class="vpn-container06">
+                  <img
+                    alt="List4229"
+                    src="{{ url_for('static', filename='public/external/list4229-fubg-200h.png') }}"
+                    class="vpn-list"
+                  />
+                  <span class="vpn-text29"><span>Logs</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="blacklisting" class="vpn-navlink6">
+              <div class="vpn-blacklist button">
+                <div class="vpn-container07">
+                  <img
+                    alt="Multiplication4229"
+                    src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
+                    class="vpn-multiplication"
+                  />
+                  <span class="vpn-text31"><span>Blacklist</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="ids" class="vpn-navlink7">
+              <div class="vpn-ids button">
+                <div class="vpn-container08">
+                  <span class="vpn-text33"><span>IDS</span></span>
+                  <div class="vpn-frameiconsetting4">
+                    <div class="vpn-group">
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-kbig.svg') }}"
+                        class="vpn-vector"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-ury6.svg') }}"
+                        class="vpn-vector1"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-apps.svg') }}"
+                        class="vpn-vector2"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-5fl.svg') }}"
+                        class="vpn-vector3"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-ow93.svg') }}"
+                        class="vpn-vector4"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-d3e.svg') }}"
+                        class="vpn-vector5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="settings" class="vpn-navlink8">
+              <div class="vpn-settings button">
+                <div class="vpn-container09">
+                  <span class="vpn-text35"><span>Settings</span></span>
+                  <img
+                    alt="Gear4229"
+                    src="{{ url_for('static', filename='public/external/gear4229-cdoj-200h.png') }}"
+                    class="vpn-gear"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    function toggleVPNStatus(vpnId) {
+        const allVpnEntries = document.querySelectorAll('.vpn-entry');
+        const statusButton = document.getElementById(`statusButton-${vpnId}`);
+        const buttonTextElement = statusButton.querySelector('span span');
+        const statusTextElement = document.querySelector(`#statusText-${vpnId}`);
+
+
+        let newStatus = buttonTextElement.textContent.trim() === "Activate" ? "Active" : "Not Active";
+
+        fetch('/update_vpn_status', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ vpn_id: vpnId, new_status: newStatus })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Update the status text and button for the clicked VPN entry
+                if (newStatus === "Active") {
+                    buttonTextElement.textContent = "Disable";
+                    statusTextElement.textContent = "Active";
+                    statusButton.classList.replace('vpn-activate', 'vpn-deactivate');
+                } else {
+                    buttonTextElement.textContent = "Activate";
+                    statusTextElement.textContent = "Not Active";
+                    statusButton.classList.replace('vpn-deactivate', 'vpn-activate');
+                }
+
+                // Loop through all VPN entries to update their statuses
+                allVpnEntries.forEach(entry => {
+                    const entryId = entry.getAttribute('data-vpn-id');
+                    const entryStatusText = entry.querySelector('.vpn-text11 span');
+                    const entryButton = document.getElementById(`statusButton-${entryId}`);
+                    const entryButtonText = entryButton.querySelector('span span');
+
+                    // If the entry is not the one clicked, and the new status is "Active", deactivate the others
+                    if (entryId != vpnId && newStatus === "Active") {
+                        entryStatusText.textContent = "Not Active";
+                        entryButtonText.textContent = "Activate";
+                        if (entryButton.classList.contains('vpn-deactivate')) {
+                            entryButton.classList.replace('vpn-deactivate', 'vpn-activate');
+                        }
+                    }
+                });
+            } else {
+                alert('Error updating status. Please try again.');
+            }
+        })
+        .catch(error => {
+            alert('Error: ' + error.message);
+        });
+    }
+    </script>
+
+
+  </body>
+</html>

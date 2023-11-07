@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>exported project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"
+      data-tag="font"
+    />
+      </head>
+  <body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div>
+      <link rel="stylesheet" href="{{ url_for('static', filename='chatbotsystem.css') }}">
+
+      <div class="chatbotsystem-container">
+        <div class="chatbotsystem-chatbotcommand">
+          <div class="chatbotsystem-menu">
+            <span class="chatbotsystem-text">
+              <span class="chatbotsystem-text01">Cyber</span>
+              <span>Vault</span>
+            </span>
+            <div class="chatbotsystem-home button">
+              <div class="chatbotsystem-container01">
+                <img
+                  alt="Home4229"
+                  src="{{ url_for('static', filename='public/external/home4229-6ztk-200h.png') }}"
+                  class="chatbotsystem-home1"
+                />
+                <span class="chatbotsystem-text03">Home</span>
+              </div>
+            </div>
+            <div class="chatbotsystem-firewall button">
+              <div class="chatbotsystem-container02">
+                <img
+                  alt="BrickWall4229"
+                  src="{{ url_for('static', filename='public/external/brickwall4229-fe85-200h.png') }}"
+                  class="chatbotsystem-brick-wall"
+                />
+                <span class="chatbotsystem-text04">Firewall</span>
+              </div>
+            </div>
+            <div class="chatbotsystem-vpn button">
+              <div class="chatbotsystem-container03">
+                <img
+                  alt="VPN4229"
+                  src="{{ url_for('static', filename='public/external/vpn4229-ur9r-200h.png') }}"
+                  class="chatbotsystem-vpn1"
+                />
+                <span class="chatbotsystem-text05"><span>VPN</span></span>
+              </div>
+            </div>
+            <a href="dns-over-httpsdis" class="chatbotsystem-navlink">
+              <div class="chatbotsystem-dns button">
+                <div class="chatbotsystem-container04">
+                  <img
+                    alt="Lock4229"
+                    src="{{ url_for('static', filename='public/external/lock4229-ou9-200h.png') }}"
+                    class="chatbotsystem-lock"
+                  />
+                  <span class="chatbotsystem-text07">
+                    <span>Secure DNS</span>
+                  </span>
+                </div>
+              </div>
+            </a>
+            <div class="chatbotsystem-logs button">
+              <div class="chatbotsystem-container05">
+                <img
+                  alt="List4229"
+                  src="{{ url_for('static', filename='public/external/list4229-fubg-200h.png') }}"
+                  class="chatbotsystem-list"
+                />
+                <span class="chatbotsystem-text09"><span>Logs</span></span>
+              </div>
+            </div>
+            <div class="chatbotsystem-suggestions button">
+              <div class="chatbotsystem-container06">
+                <span class="chatbotsystem-text11">Suggestions</span>
+                <img
+                  alt="Idea4229"
+                  src="{{ url_for('static', filename='public/external/idea4229-l48c-200h.png') }}"
+                  class="chatbotsystem-idea"
+                />
+              </div>
+            </div>
+            <div class="chatbotsystem-blacklist button">
+              <div class="chatbotsystem-container07">
+                <img
+                  alt="Multiplication4229"
+                  src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
+                  class="chatbotsystem-multiplication"
+                />
+                <span class="chatbotsystem-text12"><span>Blacklist</span></span>
+              </div>
+            </div>
+            <div class="chatbotsystem-ids button">
+              <div class="chatbotsystem-container08">
+                <span class="chatbotsystem-text14"><span>IDS</span></span>
+                <div class="chatbotsystem-frameiconsetting4">
+                  <div class="chatbotsystem-group">
+                    <img
+                      alt="Vector4229"
+                      src="{{ url_for('static', filename='public/external/vector4229-kbig.svg') }}"
+                      class="chatbotsystem-vector"
+                    />
+                    <img
+                      alt="Vector4229"
+                      src="{{ url_for('static', filename='public/external/vector4229-ury6.svg') }}"
+                      class="chatbotsystem-vector1"
+                    />
+                    <img
+                      alt="Vector4229"
+                      src="{{ url_for('static', filename='public/external/vector4229-apps.svg') }}"
+                      class="chatbotsystem-vector2"
+                    />
+                    <img
+                      alt="Vector4229"
+                      src="{{ url_for('static', filename='public/external/vector4229-5fl.svg') }}"
+                      class="chatbotsystem-vector3"
+                    />
+                    <img
+                      alt="Vector4229"
+                      src="{{ url_for('static', filename='public/external/vector4229-ow93.svg') }}"
+                      class="chatbotsystem-vector4"
+                    />
+                    <img
+                      alt="Vector4229"
+                      src="{{ url_for('static', filename='public/external/vector4229-d3e.svg') }}"
+                      class="chatbotsystem-vector5"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chatbotsystem-settings button">
+              <div class="chatbotsystem-container09">
+                <span class="chatbotsystem-text16"><span>Settings</span></span>
+                <img
+                  alt="Gear4229"
+                  src="{{ url_for('static', filename='public/external/gear4229-cdoj-200h.png') }}"
+                  class="chatbotsystem-gear"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="chatbotsystem-container10">
+            <div class="chatbotsystem-container11">
+              <div id="discovery" class="chatbotsystem-discovery">
+                <a href="/chatbot-discovery" class="chatbotsystem-discovery-link">
+                <span class="chatbotsystem-discovery1">Discovery</span>
+              </div>
+            </a>
+              <div id="system" class="chatbotsystem-system">
+                <span class="chatbotsystem-system1">System</span>
+              </div>
+              <span class="chatbotsystem-discovery2">Current Mode</span>
+            </div>
+            <!-- Inside the chatbotsystem-chatbotcommand container -->
+            <div class="chat-box" id="chat-box">
+                <!-- Bot initial message -->
+                <div class="message-container">
+                    <div class="message bot-message">How can I help?</div>
+                </div>
+            </div>
+            <div class="message-input-container">
+                <input type="text" id="user-input" class="message-input" placeholder="Type a message..." onkeypress="handleKeyPress(event)">
+                <button class="send-button" onclick="sendMessage()">Send</button>
+            </div>
+          </div>
+          <span class="chatbotsystem-text18">VaultBot</span>
+        </div>
+      </div>
+    </div>
+    <script>
+        function appendMessage(message, isUser) {
+            var chatBox = document.getElementById("chat-box");
+            var messageContainer = document.createElement("div");
+            var messageDiv = document.createElement("div");
+            var messageClass = isUser ? "user-message" : "bot-message";
+            messageContainer.classList.add("message-container");
+            messageDiv.classList.add("message", messageClass);
+            messageDiv.innerHTML = `${message}`;
+            messageContainer.appendChild(messageDiv);
+            chatBox.appendChild(messageContainer);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        function sendMessage() {
+            var userMessage = document.getElementById("user-input").value;
+            if (!userMessage.trim()) return;
+            document.getElementById("user-input").value = "";
+
+            appendMessage(userMessage, true);
+
+            // Assuming you want to keep the Flask endpoint as '/send_message_discovery'
+            fetch("/send_message_system", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "message": userMessage
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Assuming the Flask endpoint replies with JSON containing 'reply' key
+                var botResponse = data.message || data.reply;
+                appendMessage(botResponse, false);
+            })
+            .catch(error => console.error('Error:', error));
+        }
+
+
+        function handleKeyPress(event) {
+            if (event.keyCode === 13) {
+                sendMessage();
+            }
+        }
+    </script>
+  </body>
+</html>

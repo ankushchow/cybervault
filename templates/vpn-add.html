@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>exported project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"
+      data-tag="font"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div>
+      <link rel="stylesheet" href="{{ url_for('static', filename='vpn-add.css') }}">
+
+      <form action="/vpn-add" method="post">
+      <div class="vpn-add-container">
+          <div class="vpn-add-vpn-add">
+              <span class="vpn-add-text"><span>Add VPN</span></span>
+              <a href="vpn" class="vpn-add-navlink">
+                  <div id="vpnaddBack" class="vpn-add-vp-back button">
+                      <span class="vpn-add-text02"><span>Back</span></span>
+                  </div>
+              </a>
+              <button type="submit" id="vpnaddSave" class="vpn-add-vp-save button">
+                  <span class="vpn-add-text04"><span>Save</span></span>
+              </button>
+              <div class="vpn-add-container01">
+                  <div class="vpn-add-name">
+                      <span class="vpn-add-text06"><span>Name</span></span>
+                      <input type="text" name="name" class="vpn-add-avp-name input" required />
+                  </div>
+                  <div class="vpn-add-type">
+                      <span class="vpn-add-text08">Type</span>
+                      <input type="text" name="type" class="vpn-add-avp-type input" required />
+                  </div>
+                  <div class="vpn-add-server">
+                  <span class="vpn-add-text09">
+                      <span>Server</span><br />
+                  </span>
+                  <select name="server" class="vpn-add-avp-server input" required>
+                      <option value="" disabled selected>Select Server Country</option>
+                      <option value="australia">Australia</option>
+                      <option value="usa">USA</option>
+                      <option value="uk">UK</option>
+                  </select>
+              </div>
+                  <div class="vpn-add-username">
+                      <span class="vpn-add-text12">Username</span>
+                      <input type="text" name="username" class="vpn-add-avp-username input" required />
+                  </div>
+                  <div class="vpn-add-password">
+                      <span class="vpn-add-text13">Password</span>
+                      <input type="password" name="password" class="vpn-add-avp-password input" required />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </form>
+          <div class="vpn-add-connect-from-provider button">
+            <span class="vpn-add-text14">
+              <span>Connect Directly From Provider</span>
+            </span>
+          </div>
+          <span class="vpn-add-text16"><span>OR</span></span>
+          <img
+            alt="image33788"
+            src="{{ url_for('static', filename='public/external/image33788-tgkf-200h.png') }}"
+            class="vpn-add-image3"
+          />
+          <div class="vpn-add-menu">
+            <span class="vpn-add-text18">
+              <span class="vpn-add-text19">Cyber</span>
+              <span>Vault</span>
+            </span>
+            <a href="/" class="vpn-add-navlink1">
+              <div class="vpn-add-home button">
+                <div class="vpn-add-container02">
+                  <img
+                    alt="Home4229"
+                    src="{{ url_for('static', filename='public/external/home4229-6ztk-200h.png') }}"
+                    class="vpn-add-home1"
+                  />
+                  <span class="vpn-add-text21">Home</span>
+                </div>
+              </div>
+            </a>
+            <a href="firewall" class="vpn-add-navlink2">
+              <div class="vpn-add-firewall button">
+                <div class="vpn-add-container03">
+                  <img
+                    alt="BrickWall4229"
+                    src="{{ url_for('static', filename='public/external/brickwall4229-fe85-200h.png') }}"
+                    class="vpn-add-brick-wall"
+                  />
+                  <span class="vpn-add-text22">Firewall</span>
+                </div>
+              </div>
+            </a>
+            <a href="vpn" class="vpn-add-navlink3">
+              <div class="vpn-add-vpn button">
+                <div class="vpn-add-container04">
+                  <img
+                    alt="VPN4229"
+                    src="{{ url_for('static', filename='public/external/vpn4229-ur9r-200h.png') }}"
+                    class="vpn-add-vpn1"
+                  />
+                  <span class="vpn-add-text23"><span>VPN</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="dns-over-httpsdis" class="vpn-add-navlink4">
+              <div class="vpn-add-dns button">
+                <div class="vpn-add-container05">
+                  <img
+                    alt="Lock4229"
+                    src="{{ url_for('static', filename='public/external/lock4229-ou9-200h.png') }}"
+                    class="vpn-add-lock"
+                  />
+                  <span class="vpn-add-text25"><span>Secure DNS</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="logs" class="vpn-add-navlink5">
+              <div class="vpn-add-logs button">
+                <div class="vpn-add-container06">
+                  <img
+                    alt="List4229"
+                    src="{{ url_for('static', filename='public/external/list4229-fubg-200h.png') }}"
+                    class="vpn-add-list"
+                  />
+                  <span class="vpn-add-text27"><span>Logs</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="blacklisting" class="vpn-add-navlink6">
+              <div class="vpn-add-blacklist button">
+                <div class="vpn-add-container07">
+                  <img
+                    alt="Multiplication4229"
+                    src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
+                    class="vpn-add-multiplication"
+                  />
+                  <span class="vpn-add-text29"><span>Blacklist</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="ids" class="vpn-add-navlink7">
+              <div class="vpn-add-ids button">
+                <div class="vpn-add-container08">
+                  <span class="vpn-add-text31"><span>IDS</span></span>
+                  <div class="vpn-add-frameiconsetting4">
+                    <div class="vpn-add-group">
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-kbig.svg') }}"
+                        class="vpn-add-vector"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-ury6.svg') }}"
+                        class="vpn-add-vector1"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-apps.svg') }}"
+                        class="vpn-add-vector2"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-5fl.svg') }}"
+                        class="vpn-add-vector3"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-ow93.svg') }}"
+                        class="vpn-add-vector4"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-d3e.svg') }}"
+                        class="vpn-add-vector5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="settings" class="vpn-add-navlink8">
+              <div class="vpn-add-settings button">
+                <div class="vpn-add-container09">
+                  <span class="vpn-add-text33"><span>Settings</span></span>
+                  <img
+                    alt="Gear4229"
+                    src="{{ url_for('static', filename='public/external/gear4229-cdoj-200h.png') }}"
+                    class="vpn-add-gear"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
