@@ -25,3 +25,31 @@ CREATE TABLE `users` (
   `place_of_birth` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+CREATE TABLE `Firewall` (
+  `firewallID` int(11) NOT NULL AUTO_INCREMENT,
+  `eventIP` varchar(20) DEFAULT NULL,
+  `eventPort` varchar(20) DEFAULT NULL,
+  `status` varchar(20) DEFAULT NULL,
+  `protocol` varchar(10) DEFAULT NULL,
+  `ppm` int(11) DEFAULT NULL,
+  PRIMARY KEY (`firewallID`)
+) ENGINE=InnoDB AUTO_INCREMENT=260 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+CREATE TABLE `IDS` (
+  `eventID` int(11) NOT NULL AUTO_INCREMENT,
+  `eventTime` datetime DEFAULT NULL,
+  `attackType` varchar(50) DEFAULT NULL,
+  `attackIP` varchar(20) DEFAULT NULL,
+  `actionTaken` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`eventID`)
+) ENGINE=InnoDB AUTO_INCREMENT=260 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+CREATE TABLE `Logs` (
+  `logID` int(11) NOT NULL AUTO_INCREMENT,
+  `logType` varchar(50) DEFAULT NULL,
+  `logTime` datetime DEFAULT NULL,
+  `logStatus` varchar(255) DEFAULT NULL,
+  `logDescription` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`logID`)
+) ENGINE=InnoDB AUTO_INCREMENT=260 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
