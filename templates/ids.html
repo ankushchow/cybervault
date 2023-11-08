@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>exported project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <div>
+      <link rel="stylesheet" href="{{ url_for('static', filename='ids.css') }}">
+
+      <div class="ids-container">
+        <div class="ids-ids">
+          <span class="ids-text"><span>Intrusion Detection</span></span>
+          <div class="ids-mode">
+            <span class="ids-text02"><span>Choose IDS Mode</span></span>
+            <button id="idsAggres" class="ids-agressive button">
+              <span class="ids-text04"><span>Aggressive</span></span>
+              <span class="ids-text06">
+                <span>
+                  Precautionary mode active. Alerts user of any anomalies.
+                </span>
+              </span>
+            </button>
+            <button id="idsNorm" class="ids-medium button">
+              <span class="ids-text08">
+                <span>
+                  Precautionary mode active. Alerts user of possible occurring
+                  attacks.
+                </span>
+              </span>
+              <span class="ids-text10"><span>Normal</span></span>
+            </button>
+            <button id="idsDetect" class="ids-light button">
+              <span class="ids-text12">
+                <span>Precautionary mode inactive. Alerts disabled</span>
+              </span>
+              <span class="ids-text14"><span>Detection Only</span></span>
+            </button>
+          </div>
+          <div class="ids-on-off">
+            <span class="ids-text16"><span id ="idsActiveStatus">Not Active</span></span>
+            <button id ="idsActive" class="ids-activate button">
+              <span class="ids-text18">
+                <span id="idsActiveButtonText">Activate</span>
+              </span>
+            </button>
+            <div class="ids-container01">
+              <span class="ids-text20"><span>IDS Status</span></span>
+              <span class="ids-text22"><span>Settings</span></span>
+            </div>
+          </div>
+          <div class="ids-actions">
+            <div class="ids-container02">
+              <span class="ids-text24"><span>Anomaly Type</span></span>
+              <span class="ids-text26"><span>Action Taken</span></span>
+              <span class="ids-text28">Settings</span>
+            </div>
+            <span class="ids-text29"><span id="idsAtype"></span></span>
+            <span class="ids-text31"><span id="idsAction"></span></span>
+            <div class="ids-view-log button">
+              <span class="ids-text33"><span>View Log</span></span>
+            </div>
+            <div class="ids-revert-action button">
+              <span class="ids-text35">Revert Action</span>
+            </div>
+          </div>
+          <img
+            alt="image24221"
+            src="{{ url_for('static', filename='public/external/image24221-wglcy-200h.png') }}"
+            class="ids-image2"
+          />
+          <div class="ids-menu">
+            <span class="ids-text36">
+              <span class="ids-text37">Cyber</span><span>Vault</span>
+            </span>
+            <a href="index.html" class="ids-navlink">
+              <div class="ids-home button">
+                <div class="ids-container03">
+                  <img
+                    alt="Home4229"
+                    src="{{ url_for('static', filename='public/external/home4229-6ztk-200h.png') }}"
+                    class="ids-home1"
+                  />
+                  <span class="ids-text39">Home</span>
+                </div>
+              </div>
+            </a>
+            <a href="firewall.html" class="ids-navlink1">
+              <div class="ids-firewall button">
+                <div class="ids-container04">
+                  <img
+                    alt="BrickWall4229"
+                    src="{{ url_for('static', filename='public/external/brickwall4229-fe85-200h.png') }}"
+                    class="ids-brick-wall"
+                  />
+                  <span class="ids-text40">Firewall</span>
+                </div>
+              </div>
+            </a>
+            <a href="vpn.html" class="ids-navlink2">
+              <div class="ids-vpn button">
+                <div class="ids-container05">
+                  <img
+                    alt="VPN4229"
+                    src="{{ url_for('static', filename='public/external/vpn4229-ur9r-200h.png') }}"
+                    class="ids-vpn1"
+                  />
+                  <span class="ids-text41"><span>VPN</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="dns-over-httpsdis.html" class="ids-navlink3">
+              <div class="ids-dns button">
+                <div class="ids-container06">
+                  <img
+                    alt="Lock4229"
+                    src="{{ url_for('static', filename='public/external/lock4229-ou9-200h.png') }}"
+                    class="ids-lock"
+                  />
+                  <span class="ids-text43"><span>Secure DNS</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="logs.html" class="ids-navlink4">
+              <div class="ids-logs button">
+                <div class="ids-container07">
+                  <img
+                    alt="List4229"
+                    src="{{ url_for('static', filename='public/external/list4229-fubg-200h.png') }}"
+                    class="ids-list"
+                  />
+                  <span class="ids-text45"><span>Logs</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="blacklisting.html" class="ids-navlink5">
+              <div class="ids-blacklist button">
+                <div class="ids-container08">
+                  <img
+                    alt="Multiplication4229"
+                    src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
+                    class="ids-multiplication"
+                  />
+                  <span class="ids-text47"><span>Blacklist</span></span>
+                </div>
+              </div>
+            </a>
+            <a href="ids.html" class="ids-navlink6">
+              <div class="ids-ids1 button">
+                <div class="ids-container09">
+                  <span class="ids-text49"><span>IDS</span></span>
+                  <div class="ids-frameiconsetting4">
+                    <div class="ids-group">
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-kbig.svg') }}"
+                        class="ids-vector"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-ury6.svg') }}"
+                        class="ids-vector1"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-apps.svg') }}"
+                        class="ids-vector2"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-5fl.svg') }}"
+                        class="ids-vector3"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-ow93.svg') }}"
+                        class="ids-vector4"
+                      />
+                      <img
+                        alt="Vector4229"
+                        src="{{ url_for('static', filename='public/external/vector4229-d3e.svg') }}"
+                        class="ids-vector5"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="settings.html" class="ids-navlink7">
+              <div class="ids-settings button">
+                <div class="ids-container10">
+                  <span class="ids-text51"><span>Settings</span></span>
+                  <img
+                    alt="Gear4229"
+                    src="{{ url_for('static', filename='public/external/gear4229-cdoj-200h.png') }}"
+                    class="ids-gear"
+                  />
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+	<script>
+	    // Function to update button colors based on the current mode
+	    function updateButtonColors(mode) {
+		document.getElementById("idsAggres").style.backgroundColor = mode === "aggressive" ? "black" : "";
+		document.getElementById("idsNorm").style.backgroundColor = mode === "normal" ? "black" : "";
+		document.getElementById("idsDetect").style.backgroundColor = mode === "detection" ? "black" : "";
+	    }
+
+	    // Function to update the activate button's text and color based on the IDS status
+	    function updateActivateButton(status) {
+		const button = document.getElementById("idsActive");
+		const span = document.getElementById("idsActiveButtonText");
+		if (status) {
+		    button.style.backgroundColor = "black";
+		    span.textContent = "Deactivate";
+		} else {
+		    button.style.backgroundColor = "";
+		    span.textContent = "Activate";
+		}
+	    }
+	    
+	    function updateActivateText(status) {
+		const span = document.getElementById("idsActiveStatus");
+		if (status) {
+		    span.textContent = "Active";
+		} else {
+		    span.textContent = "Not Active";
+		}
+	    }
+
+	    // Function to fetch the IDS status and mode from the server
+	    function updateUI() {
+		fetch('/IDS_get_status')
+		    .then(response => response.json())
+		    .then(data => {
+		        updateButtonColors(data.mode);
+		        updateActivateButton(data.status);
+		        updateActivateText(data.status);
+		    })
+		    .catch(error => console.error(error));
+	    }
+
+	    // Attach event listeners to the mode buttons
+	    document.getElementById("idsAggres").addEventListener('click', () => {
+		fetch('/IDS_set_mode', {
+		    method: 'POST',
+		    body: new URLSearchParams({ 'mode': 'aggressive' }),
+		})
+		    .then(updateUI);
+	    });
+
+	    document.getElementById("idsNorm").addEventListener('click', () => {
+		fetch('/IDS_set_mode', {
+		    method: 'POST',
+		    body: new URLSearchParams({ 'mode': 'normal' }),
+		})
+		    .then(updateUI);
+	    });
+
+	    document.getElementById("idsDetect").addEventListener('click', () => {
+		fetch('/IDS_set_mode', {
+		    method: 'POST',
+		    body: new URLSearchParams({ 'mode': 'detection' }),
+		})
+		    .then(updateUI);
+	    });
+
+	    // Attach an event listener to the activate button
+	    document.getElementById("idsActive").addEventListener('click', () => {
+		fetch('/IDS_toggle_status', {
+		    method: 'POST',
+		})
+		    .then(updateUI);
+	    });
+
+	    // Initial UI update
+	    updateUI();
+	    
+	    // Initialize variables with empty strings
+	    let idsAtype = "";
+	    let idsAction = "";
+
+	    // Function to update the latest IDS entry data
+	    function updateLatestIDS() {
+		fetch('/get_latest_ids_entry') // Always fetch the latest IDS entry
+		    .then(response => response.json())
+		    .then(data => {
+		        if (data) {
+		            idsAtype = data.attackType;
+		            idsAction = data.actionTaken;
+		        } else {
+		            // Handle the case where there's no data (e.g., no entries in the table)
+		            idsAtype = "No data available";
+		            idsAction = "No data available";
+		        }
+		        
+		        // Update the HTML content with the updated variables
+		        document.getElementById("idsAtype").textContent = idsAtype;
+		        document.getElementById("idsAction").textContent = idsAction;
+		    })
+		    .catch(error => console.error(error));
+	    }
+
+	    // Function to fetch initial IDS values from the server
+	    function initializeIDSValues() {
+		fetch('/get_latest_ids_entry?initial=true') // Add a query parameter to indicate initial values
+		    .then(response => response.json())
+		    .then(data => {
+		        if (data) {
+		            idsAtype = data.attackType;
+		            idsAction = data.actionTaken;
+		        }
+		        
+		        // Update the HTML content with the initial values
+		        document.getElementById("idsAtype").textContent = idsAtype;
+		        document.getElementById("idsAction").textContent = idsAction;
+		    })
+		    .catch(error => console.error(error));
+	    }
+
+	    // Call the initializeIDSValues function when the page loads
+	    window.addEventListener('load', initializeIDSValues);
+
+	    // Periodically update the latest IDS entry data (e.g., every 5 seconds)
+	    //setInterval(updateLatestIDS, 20000);
+	    updateLatestIDS();
+	</script>    
+  </body>
+</html>
