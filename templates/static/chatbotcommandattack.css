@@ -1,0 +1,568 @@
+.chatbotcommandattack-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.chatbotcommandattack-chatbotcommandattack {
+  width: 100%;
+  height: 1024px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  background-color: var(--dl-color-default-backgroundprobs);
+}
+.chatbotcommandattack-image2 {
+  top: 892px;
+  left: 1317px;
+  width: 98px;
+  height: 98px;
+  position: absolute;
+}
+.chatbotcommandattack-menu {
+  top: -1px;
+  left: 1px;
+  width: 256px;
+  height: 1024px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  background-color: #ffffff;
+}
+.chatbotcommandattack-text {
+  top: 29px;
+  left: 24px;
+  color: rgb(0, 0, 0);
+  width: 206px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Bold;
+  text-align: center;
+  font-family: "Quicksand";
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-text01 {
+  color: #02bd88;
+}
+.chatbotcommandattack-home {
+  top: 123px;
+  left: -2px;
+  width: 256px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-width: 0px;
+  background-color: transparent;
+}
+.chatbotcommandattack-container01 {
+  top: 0px;
+  left: 24px;
+  width: 172px;
+  bottom: 0px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  justify-content: flex-start;
+}
+.chatbotcommandattack-home1 {
+  top: 4px;
+  left: 0px;
+  width: 31px;
+  height: 22px;
+  margin: auto;
+  position: absolute;
+  align-self: center;
+}
+.chatbotcommandattack-text03 {
+  top: 0px;
+  left: var(--dl-space-space-twounits);
+  color: rgb(2, 2, 2);
+  width: 72px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: center;
+  font-style: Medium;
+  text-align: center;
+  font-family: "Quicksand";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-firewall {
+  top: 183px;
+  left: -2px;
+  width: 256px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-width: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+}
+.chatbotcommandattack-container02 {
+  top: 0px;
+  left: 24px;
+  width: 172px;
+  bottom: 0px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.chatbotcommandattack-brick-wall {
+  top: 5px;
+  left: 0px;
+  width: 31px;
+  height: 22px;
+  position: absolute;
+}
+.chatbotcommandattack-text04 {
+  top: 0px;
+  left: var(--dl-space-space-twounits);
+  color: rgb(0, 0, 0);
+  width: 94px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Medium;
+  text-align: center;
+  font-family: "Quicksand";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-vpn {
+  top: 243px;
+  left: -2px;
+  width: 256px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-width: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+}
+.chatbotcommandattack-container03 {
+  top: 0px;
+  left: 24px;
+  width: 172px;
+  bottom: 0px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.chatbotcommandattack-vpn1 {
+  top: 5px;
+  left: 0px;
+  width: 31px;
+  height: 22px;
+  position: absolute;
+}
+.chatbotcommandattack-text05 {
+  top: 0px;
+  left: var(--dl-space-space-twounits);
+  color: rgba(0, 0, 0, 1);
+  width: 55px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-navlink {
+  display: contents;
+}
+.chatbotcommandattack-dns {
+  top: 303px;
+  left: -2px;
+  width: 256px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-width: 0px;
+  border-radius: 0px;
+  text-decoration: none;
+  background-color: transparent;
+}
+.chatbotcommandattack-container04 {
+  top: 0px;
+  left: 24px;
+  width: 172px;
+  bottom: 0px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.chatbotcommandattack-lock {
+  top: 4px;
+  left: 0px;
+  width: 31px;
+  height: 22px;
+  position: absolute;
+}
+.chatbotcommandattack-text07 {
+  top: 0px;
+  left: var(--dl-space-space-twounits);
+  color: rgba(0, 0, 0, 1);
+  width: 136px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Medium;
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-logs {
+  top: 363px;
+  left: -2px;
+  width: 256px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-width: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+}
+.chatbotcommandattack-container05 {
+  top: 0px;
+  left: 24px;
+  width: 172px;
+  bottom: 0px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.chatbotcommandattack-list {
+  top: 0px;
+  left: 0px;
+  width: 31px;
+  bottom: 0px;
+  height: 22px;
+  margin: auto;
+  position: absolute;
+}
+.chatbotcommandattack-text09 {
+  top: 0px;
+  left: var(--dl-space-space-twounits);
+  color: rgba(0, 0, 0, 1);
+  width: 55px;
+  bottom: 0px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: center;
+  font-style: Medium;
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-suggestions {
+  top: 423px;
+  left: -2px;
+  width: 256px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-width: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+}
+.chatbotcommandattack-container06 {
+  top: 0px;
+  left: 24px;
+  width: 172px;
+  bottom: 0px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.chatbotcommandattack-text11 {
+  top: 0px;
+  color: rgb(0, 0, 0);
+  right: -2px;
+  width: 146px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: center;
+  font-style: Medium;
+  text-align: center;
+  font-family: "Quicksand";
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-idea {
+  top: 4px;
+  left: 0px;
+  width: 31px;
+  height: 22px;
+  position: absolute;
+}
+.chatbotcommandattack-blacklist {
+  top: 483px;
+  left: -1px;
+  width: 256px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-width: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+}
+.chatbotcommandattack-container07 {
+  top: 0px;
+  left: 24px;
+  width: 172px;
+  bottom: 0px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.chatbotcommandattack-multiplication {
+  top: 4px;
+  left: 0px;
+  width: 31px;
+  height: 22px;
+  position: absolute;
+}
+.chatbotcommandattack-text12 {
+  top: 0px;
+  left: var(--dl-space-space-twounits);
+  color: rgba(0, 0, 0, 1);
+  width: 95px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: center;
+  font-style: Medium;
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-ids {
+  top: 543px;
+  left: -1px;
+  width: 256px;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-width: 0px;
+  border-radius: 0px;
+  background-color: transparent;
+  background-image: linear-gradient(90deg, rgb(255, 255, 255) 26.00%,rgb(2, 189, 136) 100.00%);
+}
+.chatbotcommandattack-container08 {
+  top: 0px;
+  left: 24px;
+  width: 172px;
+  bottom: 0px;
+  height: 30px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.chatbotcommandattack-text14 {
+  top: 0px;
+  left: var(--dl-space-space-twounits);
+  color: rgba(0, 0, 0, 1);
+  width: 38px;
+  height: auto;
+  position: absolute;
+  font-size: 24px;
+  align-self: center;
+  font-style: Medium;
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 500;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-frameiconsetting4 {
+  top: 4px;
+  left: 0px;
+  width: 24.256410598754883px;
+  height: 22px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.chatbotcommandattack-group {
+  top: 0px;
+  left: 0px;
+  width: 24.256410598754883px;
+  height: 22px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+}
+.chatbotcommandattack-vector {
+  top: 3.948620080947876px;
+  left: 15.794862747192383px;
+  width: 8px;
+  height: 2px;
+  position: absolute;
+}
+.chatbotcommandattack-vector1 {
+  top: 3.948620080947876px;
+  left: 9.094947017729282e-13px;
+  width: 6px;
+  height: 2px;
+  position: absolute;
+}
+.chatbotcommandattack-vector2 {
+  top: 0px;
+  left: 5.076851844787598px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+.chatbotcommandattack-vector3 {
+  top: 16.358978271484375px;
+  left: 18.051326751708984px;
+  width: 6px;
+  height: 2px;
+  position: absolute;
+}
+.chatbotcommandattack-vector4 {
+  top: 16.358978271484375px;
+  left: 9.094947017729282e-13px;
+  width: 8px;
+  height: 2px;
+  position: absolute;
+}
+.chatbotcommandattack-vector5 {
+  top: 12.410358428955078px;
+  left: 9.589778900146484px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+.chatbotcommandattack-settings {
+  top: 957px;
+  left: -2px;
+  width: 256px;
+  height: 43px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-width: 0px;
+  background-color: transparent;
+}
+.chatbotcommandattack-container09 {
+  top: 8px;
+  left: 24px;
+  width: 172px;
+  height: 30px;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+}
+.chatbotcommandattack-text16 {
+  top: 0px;
+  left: var(--dl-space-space-twounits);
+  color: rgba(0, 0, 0, 1);
+  width: 134px;
+  bottom: 0px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 24px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Quicksand;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.chatbotcommandattack-gear {
+  top: 0px;
+  left: 0px;
+  width: 21px;
+  bottom: 0px;
+  height: 19px;
+  margin: auto;
+  position: absolute;
+}
+.chatbotcommandattack-container10 {
+  top: 140px;
+  left: 300px;
+  width: 1123px;
+  border: 2px dashed rgba(120, 120, 120, 0.4);
+  height: 744px;
+  display: flex;
+  position: absolute;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.55);
+  align-items: flex-start;
+  border-radius: 10px;
+  background-color: #ffffff;
+}

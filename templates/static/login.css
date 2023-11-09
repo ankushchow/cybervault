@@ -1,0 +1,220 @@
+.login-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.login-login {
+  width: 100%;
+  height: 1024px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) ;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: var(--dl-color-default-backgroundprobs);
+  background-image: linear-gradient(99deg, rgba(219, 255, 245, 1) 0%, rgba(230, 230, 230, 1) 88%, rgba(184, 255, 235, 1) 100%);
+}
+.login-container1 {
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 1188px;
+  bottom: 0px;
+  height: 916px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.55);
+  align-items: center;
+  border-radius: 10px;
+  justify-content: center;
+  background-color: #FFFFFF;
+}
+.login-username {
+  top: 178px;
+  left: 232px;
+  width: 724px;
+  height: 92px;
+  position: absolute;
+  font-size: 30px;
+  border-width: 0px;
+  background-color: rgba(230, 230, 230, 1);
+}
+.login-password {
+  top: 307px;
+  left: 232px;
+  width: 724px;
+  height: 92px;
+  position: absolute;
+  font-size: 30px;
+  font-family: "Quicksand";
+  border-width: 0px;
+  background-color: rgba(230, 230, 230, 1);
+}
+.login-remember-me {
+  left: 0px;
+  right: 0px;
+  width: 300px;
+  bottom: 190px;
+  height: 45px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+.login-checkbox {
+  top: 10px;
+  right: var(--dl-space-space-unit);
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  border-color: var(--dl-color-gray-black);
+  border-width: 2px;
+}
+.login-text {
+  top: 0px;
+  left: 0px;
+  color: rgb(0, 0, 0);
+  right: 0px;
+  width: 300px;
+  bottom: 0px;
+  height: var(--dl-size-size-small);
+  margin: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Regular;
+  text-align: left;
+  font-family: "Quicksand";
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.login-forgot-password {
+  left: 0px;
+  right: 0px;
+  width: 300px;
+  bottom: 147px;
+  height: 45px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+}
+.login-text04 {
+  top: 0px;
+  left: 0px;
+  color: rgb(0, 0, 0);
+  right: 0px;
+  width: 300px;
+  bottom: 0px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Regular;
+  text-align: left;
+  font-family: "Quicksand";
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.login-text05 {
+  top: 54px;
+  left: 0px;
+  color: rgba(0, 0, 0, 1);
+  right: 0px;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  font-size: 64px;
+  font-style: Bold;
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.login-log-in {
+  top: 440px;
+  left: 0px;
+  right: 0px;
+  width: 265px;
+  height: 88px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  border-width: 0px;
+  border-radius: 10px;
+  background-color: rgba(2, 189, 136, 1);
+}
+.login-text07 {
+  top: 0px;
+  left: 0px;
+  color: rgb(255, 255, 255);
+  right: 0px;
+  width: 110px;
+  bottom: 0px;
+  height: 50px;
+  margin: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: "Quicksand";
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.login-navlink {
+  display: contents;
+}
+.login-sign-up {
+  left: 0px;
+  right: 0px;
+  width: 265px;
+  bottom: 255px;
+  height: 88px;
+  margin: auto;
+  display: flex;
+  position: absolute;
+  align-items: flex-start;
+  border-width: 0px;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: rgba(2, 189, 136, 1);
+}
+.login-text08 {
+  top: 0px;
+  left: 0px;
+  color: rgba(255, 255, 255, 1);
+  right: 0px;
+  width: 150px;
+  bottom: 0px;
+  height: 50px;
+  margin: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: SemiBold;
+  text-align: center;
+  font-family: Quicksand;
+  font-weight: 600;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
