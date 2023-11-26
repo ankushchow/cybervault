@@ -39,6 +39,7 @@ CREATE TABLE `Firewall` (
 CREATE TABLE `IDS` (
   `eventID` int(11) NOT NULL AUTO_INCREMENT,
   `eventTime` datetime DEFAULT NULL,
+  `mode` varchar(50) DEFAULT NULL,
   `attackType` varchar(50) DEFAULT NULL,
   `attackIP` varchar(20) DEFAULT NULL,
   `actionTaken` varchar(100) DEFAULT NULL,
