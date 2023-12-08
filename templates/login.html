@@ -47,12 +47,24 @@
       <div class="login-container">
         <div class="login-login">
           <div class="login-container1">
+            <!-- Display flashed messages -->
+          {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <div class="site-errors" id="loginErrorPopup">
+                {% for message in messages %}
+                  <p>{{ message }}</p>
+                {% endfor %}
+              </div>
+            {% endif %}
+          {% endwith %}
+
             <form method="POST" action="/login">
               <input
                 type="text"
                 name="username"
                 placeholder="USERNAME"
                 class="login-username input"
+                value="{{ remembered_username }}"
               />
               <input
                 type="password"
@@ -91,5 +103,19 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Show the popup if it exists
+        if ($('#loginErrorPopup').length) {
+            $('#loginErrorPopup').fadeIn();
+
+            // Hide the popup after 5 seconds
+            setTimeout(function() {
+                $('#loginErrorPopup').fadeOut();
+            }, 5000);
+        }
+    });
+</script>
   </body>
 </html>

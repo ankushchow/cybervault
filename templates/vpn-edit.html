@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>exported project</title>
+    <title>cybervault</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -46,11 +46,7 @@
       <div class="vpn-edit-container">
         <div class="vpn-edit-vpn-edit">
           <span class="vpn-edit-text"><span>Edit VPN</span></span>
-          <img
-            alt="image23788"
-            src="{{ url_for('static', filename='public/external/image23788-0js-200h.png') }}"
-            class="vpn-edit-image2"
-          />
+        
           <form action="{{ url_for('vpn_edit', vpn_id=vpn[0]) }}" method="post">
         <div class="vpn-edit-container01">
             <div class="vpn-edit-name">
@@ -65,11 +61,11 @@
                 <span class="vpn-edit-text05">
                     <span>Server</span><br />
                 </span>
-                <select name="server" class="vpn-edit-avp-server input" required>
-                <option value="australia">Australia</option>
-                <option value="usa">USA</option>
-                <option value="uk">UK</option>
-              </select>
+          <select name="server" class="vpn-edit-avp-server input" required>
+            <option value="australia" {% if vpn[4] == 'australia' %}selected{% endif %}>Australia</option>
+            <option value="usa" {% if vpn[4] == 'usa' %}selected{% endif %}>USA</option>
+            <option value="uk" {% if vpn[4] == 'uk' %}selected{% endif %}>UK</option>
+        </select>
             </div>
             <div class="vpn-edit-username">
                 <span class="vpn-edit-text08">Username</span>
@@ -93,8 +89,7 @@
     </form>
           <div class="vpn-edit-menu">
             <span class="vpn-edit-text14">
-              <span class="vpn-edit-text15">Cyber</span>
-              <span>Vault</span>
+              <span class="vpn-edit-text15">Cyber</span><span>Vault</span>
             </span>
             <a href="index.html" class="vpn-edit-navlink">
               <div class="vpn-edit-home button">
@@ -108,7 +103,7 @@
                 </div>
               </div>
             </a>
-            <a href="firewall.html" class="vpn-edit-navlink1">
+            <a href="firewall" class="vpn-edit-navlink1">
               <div class="vpn-edit-firewall button">
                 <div class="vpn-edit-container03">
                   <img
@@ -120,7 +115,7 @@
                 </div>
               </div>
             </a>
-            <a href="vpn.html" class="vpn-edit-navlink2">
+            <a href="vpn" class="vpn-edit-navlink2">
               <div class="vpn-edit-vpn button">
                 <div class="vpn-edit-container04">
                   <img
@@ -144,7 +139,7 @@
                 </div>
               </div>
             </a>
-            <a href="logs.html" class="vpn-edit-navlink4">
+            <a href="logs" class="vpn-edit-navlink4">
               <div class="vpn-edit-logs button">
                 <div class="vpn-edit-container06">
                   <img
@@ -156,7 +151,7 @@
                 </div>
               </div>
             </a>
-            <a href="blacklisting.html" class="vpn-edit-navlink5">
+            <a href="firewall-rule" class="vpn-edit-navlink5">
               <div class="vpn-edit-blacklist button">
                 <div class="vpn-edit-container07">
                   <img
@@ -164,11 +159,11 @@
                     src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
                     class="vpn-edit-multiplication"
                   />
-                  <span class="vpn-edit-text25"><span>Blacklist</span></span>
+                  <span class="vpn-edit-text25"><span>Rules</span></span>
                 </div>
               </div>
             </a>
-            <a href="ids.html" class="vpn-edit-navlink6">
+            <a href="ids" class="vpn-edit-navlink6">
               <div class="vpn-edit-ids button">
                 <div class="vpn-edit-container08">
                   <span class="vpn-edit-text27"><span>IDS</span></span>
@@ -209,7 +204,7 @@
                 </div>
               </div>
             </a>
-            <a href="settings.html" class="vpn-edit-navlink7">
+            <a href="settings" class="vpn-edit-navlink7">
               <div class="vpn-edit-settings button">
                 <div class="vpn-edit-container09">
                   <span class="vpn-edit-text29"><span>Settings</span></span>

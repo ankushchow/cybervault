@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>exported project</title>
+    <title>cybervault</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -39,6 +39,20 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='dns-over-httpsdis.css') }}">
 
       <div class="dns-over-httpsdis-container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="site-errors" id="loginErrorPopup">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <div class="site-errors" id="localErrorPopup">
+            <p></p>
+        </div>
+
         <div class="dns-over-httpsdis-dns-over-httpsdis">
           <span class="dns-over-httpsdis-text">
             <span>DNS Over HTTPS</span>
@@ -49,19 +63,13 @@
               requests by routing it through supported DNS providers
             </span>
           </span>
-          <img
-            alt="image33788"
-            src="{{ url_for('static', filename='public/external/image33788-oj-200h.png') }}"
-            class="dns-over-httpsdis-image3"
-          />
           <a href="dns-add">
           <div id="dnsAdd" class="dns-over-httpsdis-add-dns-button button">
             <span class="dns-over-httpsdis-text04"><span>Add DNS</span></span>
           </div>
           <div class="dns-over-httpsdis-menu">
             <span class="dns-over-httpsdis-text06">
-              <span class="dns-over-httpsdis-text07">Cyber</span>
-              <span>Vault</span>
+              <span class="dns-over-httpsdis-text07">Cyber</span><span>Vault</span>
             </span>
             <a href="/" class="dns-over-httpsdis-navlink">
               <div class="dns-over-httpsdis-home button">
@@ -75,7 +83,7 @@
                 </div>
               </div>
             </a>
-            <a href="firewall" class="dns-over-httpsdis-navlink1">
+             <a href="firewall" class="dns-over-httpsdis-navlink1">
               <div class="dns-over-httpsdis-firewall button">
                 <div class="dns-over-httpsdis-container02">
                   <img
@@ -127,7 +135,7 @@
                 </div>
               </div>
             </a>
-            <a href="blacklisting" class="dns-over-httpsdis-navlink5">
+            <a href="chatbot-discovery" class="dns-over-httpsdis-navlink5">
               <div class="dns-over-httpsdis-blacklist button">
                 <div class="dns-over-httpsdis-container06">
                   <img
@@ -136,7 +144,7 @@
                     class="dns-over-httpsdis-multiplication"
                   />
                   <span class="dns-over-httpsdis-text17">
-                    <span>Blacklist</span>
+                    <span>VaultBot</span>
                   </span>
                 </div>
               </div>
@@ -207,25 +215,39 @@
 
     {% for record in dns_record %}
     <div class="dns-record-entry">
-        <span class="dns-over-httpsdis-text28">{{ record[1] }}</span> <!-- Assuming record[1] is the name -->
-        <span class="dns-over-httpsdis-text29"><span>{{ record[2] }}</span></span> <!-- Assuming record[2] is the status -->
-        <!-- Activate/Edit buttons can be adjusted as needed -->
-<div class="dns-over-httpsdis-button-container">
+    <span class="dns-over-httpsdis-text28">{{ record[1] }}</span> <!-- Assuming record[1] is the name -->
+    <span class="dns-over-httpsdis-text29"><span>{{ record[2] }}</span></span> <!-- Assuming record[2] is the status -->
+    <div class="dns-over-httpsdis-button-container">
         <div id="statusButton-{{ record[0] }}" class="dns-over-httpsdis-{{ 'deactivate' if record[2] == 'Active' else 'activate' }} button" onclick="toggleDNSStatus({{ record[0] }})">
-         <span class="dns-over-httpsdis-text31">
-             <span>{{ 'Disable' if record[2] == 'Active' else 'Activate' }}</span>
-         </span>
-       </div>
-       <div onclick="location.href='{{ url_for('dns_edit', dns_id=record[0]) }}'" class="dns-over-httpsdis-edit button" style="cursor: pointer;">
-         <span class="dns-over-httpsdis-text33">Edit</span>
-     </div>
-     </div>
+            <span class="dns-over-httpsdis-text31">
+                <span>{{ 'Disable' if record[2] == 'Active' else 'Activate' }}</span>
+            </span>
         </div>
+        <div onclick="location.href='{{ url_for('dns_edit', dns_id=record[0]) }}'" class="dns-over-httpsdis-edit button" style="cursor: pointer;">
+            <span class="dns-over-httpsdis-text33">Edit</span>
+        </div>
+        <div class="dns-over-httpsdis-delete button" onclick="deleteDNSRecord({{ record[0] }})">
+            <span class="dns-over-httpsdis-text32">Delete</span>
+        </div>
+    </div>
+</div>
         {% endfor %}
         </div>
       </div>
     </div>
     <script>
+
+    function showError(message) {
+            const errorPopup = document.getElementById('localErrorPopup');
+            errorPopup.innerHTML = `<p>${message}</p>`;
+            errorPopup.style.display = 'block';
+
+            // Hide the message after 5 seconds
+            setTimeout(() => {
+                errorPopup.style.display = 'none';
+            }, 5000);
+        }
+
     function toggleDNSStatus(dnsId) {
     const statusButton = document.getElementById(`statusButton-${dnsId}`);
     const buttonTextElement = statusButton.getElementsByClassName('dns-over-httpsdis-text31')[0].getElementsByTagName('span')[0];
@@ -269,15 +291,47 @@
         }
       } else {
         // Error handling
-        alert('Error updating status. Please try again.');
+        showError('Error updating status: ' + data.error);
       }
     })
     .catch(error => {
       // Handle any errors that occurred during the fetch
-      alert('Error: ' + error.message);
+      showError('Error: ' + error.message);
     });
 }
 
+function deleteDNSRecord(dnsId) {
+    fetch(`/delete_dns/${dnsId}`, { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert("DNS record deleted successfully.");
+                // Refresh the page or remove the DNS entry from the DOM
+                location.reload();
+            } else {
+                alert("Error: " + data.error);
+            }
+        })
+        .catch(error => {
+            alert("Error: " + error.message);
+        });
+}
+
+
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Show the popup if it exists
+    if ($('#loginErrorPopup').length) {
+        $('#loginErrorPopup').fadeIn();
+
+        // Hide the popup after 5 seconds
+        setTimeout(function() {
+            $('#loginErrorPopup').fadeOut();
+        }, 5000);
+    }
+});
 </script>
   </body>
 </html>

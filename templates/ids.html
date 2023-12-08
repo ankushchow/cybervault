@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>exported project</title>
+    <title>IDS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -52,24 +52,18 @@
               <span class="ids-text04"><span>Aggressive</span></span>
               <span class="ids-text06">
                 <span>
-                  Precautionary mode active. Alerts user of any anomalies.
+                  Precautionary mode active. Alerts users of any anomalies and Takes automated actions.
                 </span>
               </span>
             </button>
             <button id="idsNorm" class="ids-medium button">
               <span class="ids-text08">
                 <span>
-                  Precautionary mode active. Alerts user of possible occurring
-                  attacks.
+                  Precautionary mode inactive. Alerts user of possible occurring
+                  attacks and Requires user action
                 </span>
               </span>
               <span class="ids-text10"><span>Normal</span></span>
-            </button>
-            <button id="idsDetect" class="ids-light button">
-              <span class="ids-text12">
-                <span>Precautionary mode inactive. Alerts disabled</span>
-              </span>
-              <span class="ids-text14"><span>Detection Only</span></span>
             </button>
           </div>
           <div class="ids-on-off">
@@ -86,29 +80,32 @@
           </div>
           <div class="ids-actions">
             <div class="ids-container02">
-              <span class="ids-text24"><span>Anomaly Type</span></span>
-              <span class="ids-text26"><span>Action Taken</span></span>
-              <span class="ids-text28">Settings</span>
+              <span class="ids-text24">Anomaly Type</span>
+              <span class="ids-text26">Status</span>
+              <span class="ids-text28">Action Taken</span>
             </div>
-            <span class="ids-text29"><span id="idsAtype"></span></span>
-            <span class="ids-text31"><span id="idsAction"></span></span>
-            <div class="ids-view-log button">
-              <span class="ids-text33"><span>View Log</span></span>
+            <!-- Assuming you have a loop for each IDS record -->
+            {% for ids_record in ids_records %}
+            <div class="ids-record-entry">
+              <span class="ids-text29"><span id="idsAtype">{{ ids_record[0] }}</span></span>
+              <span class="ids-text31"><span id="idsAction">{{ ids_record[1] }}</span></span>
+              <button class="ids-revert-action button" id="Revert" onclick="revertBlock({{ ids_record[2] }})">
+                <span class="ids-text35">
+                	{% if ids_record[1] == 'None' %}
+          			Block
+        		{% else %}
+          			Revert
+          		{% endif %}
+                </span>
+              </button>
             </div>
-            <div class="ids-revert-action button">
-              <span class="ids-text35">Revert Action</span>
-            </div>
+            {% endfor %}
           </div>
-          <img
-            alt="image24221"
-            src="{{ url_for('static', filename='public/external/image24221-wglcy-200h.png') }}"
-            class="ids-image2"
-          />
           <div class="ids-menu">
             <span class="ids-text36">
               <span class="ids-text37">Cyber</span><span>Vault</span>
             </span>
-            <a href="index.html" class="ids-navlink">
+            <a href="/" class="ids-navlink">
               <div class="ids-home button">
                 <div class="ids-container03">
                   <img
@@ -120,7 +117,7 @@
                 </div>
               </div>
             </a>
-            <a href="firewall.html" class="ids-navlink1">
+            <a href="firewall" class="ids-navlink1">
               <div class="ids-firewall button">
                 <div class="ids-container04">
                   <img
@@ -132,7 +129,7 @@
                 </div>
               </div>
             </a>
-            <a href="vpn.html" class="ids-navlink2">
+            <a href="vpn" class="ids-navlink2">
               <div class="ids-vpn button">
                 <div class="ids-container05">
                   <img
@@ -144,7 +141,7 @@
                 </div>
               </div>
             </a>
-            <a href="dns-over-httpsdis.html" class="ids-navlink3">
+            <a href="dns-over-httpsdis" class="ids-navlink3">
               <div class="ids-dns button">
                 <div class="ids-container06">
                   <img
@@ -156,7 +153,7 @@
                 </div>
               </div>
             </a>
-            <a href="logs.html" class="ids-navlink4">
+            <a href="logs" class="ids-navlink4">
               <div class="ids-logs button">
                 <div class="ids-container07">
                   <img
@@ -168,7 +165,7 @@
                 </div>
               </div>
             </a>
-            <a href="blacklisting.html" class="ids-navlink5">
+            <a href="chatbot-discovery" class="ids-navlink5">
               <div class="ids-blacklist button">
                 <div class="ids-container08">
                   <img
@@ -176,11 +173,11 @@
                     src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
                     class="ids-multiplication"
                   />
-                  <span class="ids-text47"><span>Blacklist</span></span>
+                  <span class="ids-text47"><span>VaultBot</span></span>
                 </div>
               </div>
             </a>
-            <a href="ids.html" class="ids-navlink6">
+            <a href="ids" class="ids-navlink6">
               <div class="ids-ids1 button">
                 <div class="ids-container09">
                   <span class="ids-text49"><span>IDS</span></span>
@@ -221,7 +218,7 @@
                 </div>
               </div>
             </a>
-            <a href="settings.html" class="ids-navlink7">
+            <a href="settings" class="ids-navlink7">
               <div class="ids-settings button">
                 <div class="ids-container10">
                   <span class="ids-text51"><span>Settings</span></span>
@@ -242,7 +239,6 @@
 	    function updateButtonColors(mode) {
 		document.getElementById("idsAggres").style.backgroundColor = mode === "aggressive" ? "black" : "";
 		document.getElementById("idsNorm").style.backgroundColor = mode === "normal" ? "black" : "";
-		document.getElementById("idsDetect").style.backgroundColor = mode === "detection" ? "black" : "";
 	    }
 
 	    // Function to update the activate button's text and color based on the IDS status
@@ -250,14 +246,14 @@
 		const button = document.getElementById("idsActive");
 		const span = document.getElementById("idsActiveButtonText");
 		if (status) {
-		    button.style.backgroundColor = "black";
+		    button.style.backgroundColor = "DarkRed";
 		    span.textContent = "Deactivate";
 		} else {
 		    button.style.backgroundColor = "";
 		    span.textContent = "Activate";
 		}
 	    }
-	    
+
 	    function updateActivateText(status) {
 		const span = document.getElementById("idsActiveStatus");
 		if (status) {
@@ -296,14 +292,6 @@
 		    .then(updateUI);
 	    });
 
-	    document.getElementById("idsDetect").addEventListener('click', () => {
-		fetch('/IDS_set_mode', {
-		    method: 'POST',
-		    body: new URLSearchParams({ 'mode': 'detection' }),
-		})
-		    .then(updateUI);
-	    });
-
 	    // Attach an event listener to the activate button
 	    document.getElementById("idsActive").addEventListener('click', () => {
 		fetch('/IDS_toggle_status', {
@@ -314,55 +302,47 @@
 
 	    // Initial UI update
 	    updateUI();
-	    
-	    // Initialize variables with empty strings
-	    let idsAtype = "";
-	    let idsAction = "";
 
-	    // Function to update the latest IDS entry data
-	    function updateLatestIDS() {
-		fetch('/get_latest_ids_entry') // Always fetch the latest IDS entry
+
+	    function revertBlock(eventId) {
+		    fetch(`/revert_block/${eventId}`, {
+			method: 'POST',
+		    })
 		    .then(response => response.json())
 		    .then(data => {
-		        if (data) {
-		            idsAtype = data.attackType;
-		            idsAction = data.actionTaken;
-		        } else {
-		            // Handle the case where there's no data (e.g., no entries in the table)
-		            idsAtype = "No data available";
-		            idsAction = "No data available";
-		        }
-		        
-		        // Update the HTML content with the updated variables
-		        document.getElementById("idsAtype").textContent = idsAtype;
-		        document.getElementById("idsAction").textContent = idsAction;
+			// Handle the response as needed
+			console.log(data);
+			// Optionally, update the UI or do other actions
+			updateUI();
+      location.reload()
 		    })
 		    .catch(error => console.error(error));
-	    }
+	   }
+	</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var lastCount = null;
 
-	    // Function to fetch initial IDS values from the server
-	    function initializeIDSValues() {
-		fetch('/get_latest_ids_entry?initial=true') // Add a query parameter to indicate initial values
-		    .then(response => response.json())
-		    .then(data => {
-		        if (data) {
-		            idsAtype = data.attackType;
-		            idsAction = data.actionTaken;
-		        }
-		        
-		        // Update the HTML content with the initial values
-		        document.getElementById("idsAtype").textContent = idsAtype;
-		        document.getElementById("idsAction").textContent = idsAction;
-		    })
-		    .catch(error => console.error(error));
-	    }
+        function checkForUpdates() {
+            fetch('/check-ids-update')
+                .then(response => {
+                    if (response.redirected) {
+                        window.location.href = response.url;
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (lastCount !== null && lastCount !== data.count) {
+                        window.location.reload();
+                    }
+                    lastCount = data.count;
+                })
+                .catch(error => console.error('Error:', error));
+        }
 
-	    // Call the initializeIDSValues function when the page loads
-	    window.addEventListener('load', initializeIDSValues);
-
-	    // Periodically update the latest IDS entry data (e.g., every 5 seconds)
-	    //setInterval(updateLatestIDS, 20000);
-	    updateLatestIDS();
-	</script>    
+        // Check every 5 seconds
+        setInterval(checkForUpdates, 5000);
+    });
+</script>
   </body>
 </html>

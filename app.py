@@ -16,7 +16,7 @@ app = Flask(__name__)
 app.secret_key = os.urandom(24)
 stime=5
 app.permanent_session_lifetime = dt.timedelta(minutes=stime)
-openai.api_key = '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'
+openai.api_key = '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'
 Talisman(app, content_security_policy=None)
 
 NEXTDNS_BASE_URL = "https://api.nextdns.io/profiles/"

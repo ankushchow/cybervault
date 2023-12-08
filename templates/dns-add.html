@@ -45,13 +45,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='dns-add.css') }}">
 
       <div class="dns-add-container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="site-errors" id="loginErrorPopup">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
         <div class="dns-add-dns-edit">
           <span class="dns-add-text">Add New DNS</span>
-          <img
-            alt="image23788"
-            src="{{ url_for('static', filename='public/external/image23788-o1y-200h.png') }}"
-            class="dns-add-image2"
-          />
           <a href="dns-over-httpsdis" class="dns-add-navlink">
             <div id="dnsaddBack" class="dns-add-back-button button">
               <span class="dns-add-text01">Back</span>
@@ -59,8 +63,7 @@
           </a>
           <div class="dns-add-menu">
             <span class="dns-add-text02">
-              <span class="dns-add-text03">Cyber</span>
-              <span>Vault</span>
+              <span class="dns-add-text03">Cyber</span><span>Vault</span>
             </span>
             <a href="/" class="dns-add-navlink1">
               <div class="dns-add-home button">
@@ -74,7 +77,7 @@
                 </div>
               </div>
             </a>
-            <a href="firewall.html" class="dns-add-navlink2">
+            <a href="firewall" class="dns-add-navlink2">
               <div class="dns-add-firewall button">
                 <div class="dns-add-container02">
                   <img
@@ -86,7 +89,7 @@
                 </div>
               </div>
             </a>
-            <a href="vpn.html" class="dns-add-navlink3">
+            <a href="vpn" class="dns-add-navlink3">
               <div class="dns-add-vpn button">
                 <div class="dns-add-container03">
                   <img
@@ -98,7 +101,7 @@
                 </div>
               </div>
             </a>
-            <a href="dns-over-httpsdis.html" class="dns-add-navlink4">
+            <a href="dns-over-httpsdis" class="dns-add-navlink4">
               <div class="dns-add-dns button">
                 <div class="dns-add-container04">
                   <img
@@ -110,7 +113,7 @@
                 </div>
               </div>
             </a>
-            <a href="logs.html" class="dns-add-navlink5">
+            <a href="logs" class="dns-add-navlink5">
               <div class="dns-add-logs button">
                 <div class="dns-add-container05">
                   <img
@@ -122,7 +125,7 @@
                 </div>
               </div>
             </a>
-            <a href="blacklisting.html" class="dns-add-navlink6">
+            <a href="firewall-rule" class="dns-add-navlink6">
               <div class="dns-add-blacklist button">
                 <div class="dns-add-container06">
                   <img
@@ -130,11 +133,11 @@
                     src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
                     class="dns-add-multiplication"
                   />
-                  <span class="dns-add-text13"><span>Blacklist</span></span>
+                  <span class="dns-add-text13"><span>VaultBot</span></span>
                 </div>
               </div>
             </a>
-            <a href="ids.html" class="dns-add-navlink7">
+            <a href="ids" class="dns-add-navlink7">
               <div class="dns-add-ids button">
                 <div class="dns-add-container07">
                   <span class="dns-add-text15"><span>IDS</span></span>
@@ -175,7 +178,7 @@
                 </div>
               </div>
             </a>
-            <a href="settings.html" class="dns-add-navlink8">
+            <a href="settings" class="dns-add-navlink8">
               <div class="dns-add-settings button">
                 <div class="dns-add-container08">
                   <span class="dns-add-text17"><span>Settings</span></span>
@@ -214,5 +217,19 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Show the popup if it exists
+        if ($('#loginErrorPopup').length) {
+            $('#loginErrorPopup').fadeIn();
+
+            // Hide the popup after 5 seconds
+            setTimeout(function() {
+                $('#loginErrorPopup').fadeOut();
+            }, 5000);
+        }
+    });
+</script>
   </body>
 </html>

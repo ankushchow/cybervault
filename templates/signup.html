@@ -46,6 +46,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
 
       <div class="signup-container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="site-errors" id="loginErrorPopup">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
         <div class="signup-signup">
           <div class="signup-createaccount">
             <span class="signup-text"><span>Create Account</span></span>
@@ -77,7 +86,7 @@
               <button type="submit" class="signup-sign-up button">
     <span class="signup-text2">Sign Up</span>
   </button>
-	   </form>	
+	   </form>
             <div class="signup-already button">
               <a href="login" class="signup-text6">
                 <span class="signup-text7">Already Have an Account?</span>
@@ -89,6 +98,19 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Show the popup if it exists
+        if ($('#loginErrorPopup').length) {
+            $('#loginErrorPopup').fadeIn();
+
+            // Hide the popup after 5 seconds
+            setTimeout(function() {
+                $('#loginErrorPopup').fadeOut();
+            }, 5000);
+        }
+    });
+</script>
   </body>
 </html>
-

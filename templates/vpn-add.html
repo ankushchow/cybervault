@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>exported project</title>
+    <title>cybervault</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -45,6 +45,15 @@
 
       <form action="/vpn-add" method="post">
       <div class="vpn-add-container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="site-errors" id="loginErrorPopup">
+              {% for message in messages %}
+                <p>{{ message }}</p>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
           <div class="vpn-add-vpn-add">
               <span class="vpn-add-text"><span>Add VPN</span></span>
               <a href="vpn" class="vpn-add-navlink">
@@ -61,9 +70,14 @@
                       <input type="text" name="name" class="vpn-add-avp-name input" required />
                   </div>
                   <div class="vpn-add-type">
-                      <span class="vpn-add-text08">Type</span>
-                      <input type="text" name="type" class="vpn-add-avp-type input" required />
-                  </div>
+                    <span class="vpn-add-text08">Type</span>
+                    <select name="type" class="vpn-add-avp-type input" required>
+                        <option value="" disabled selected>Select VPN Type</option>
+                        <option value="nordvpn">NordVPN</option>
+                        <option value="expressvpn">ExpressVPN</option>
+                        <option value="surfshark">Surfshark</option>
+                    </select>
+                </div>
                   <div class="vpn-add-server">
                   <span class="vpn-add-text09">
                       <span>Server</span><br />
@@ -87,21 +101,9 @@
           </div>
       </div>
   </form>
-          <div class="vpn-add-connect-from-provider button">
-            <span class="vpn-add-text14">
-              <span>Connect Directly From Provider</span>
-            </span>
-          </div>
-          <span class="vpn-add-text16"><span>OR</span></span>
-          <img
-            alt="image33788"
-            src="{{ url_for('static', filename='public/external/image33788-tgkf-200h.png') }}"
-            class="vpn-add-image3"
-          />
           <div class="vpn-add-menu">
             <span class="vpn-add-text18">
-              <span class="vpn-add-text19">Cyber</span>
-              <span>Vault</span>
+              <span class="vpn-add-text19">Cyber</span><span>Vault</span>
             </span>
             <a href="/" class="vpn-add-navlink1">
               <div class="vpn-add-home button">
@@ -115,7 +117,7 @@
                 </div>
               </div>
             </a>
-            <a href="firewall" class="vpn-add-navlink2">
+             <a href="firewall" class="vpn-add-navlink2">
               <div class="vpn-add-firewall button">
                 <div class="vpn-add-container03">
                   <img
@@ -163,7 +165,7 @@
                 </div>
               </div>
             </a>
-            <a href="blacklisting" class="vpn-add-navlink6">
+            <a href="chatbot-discovery" class="vpn-add-navlink6">
               <div class="vpn-add-blacklist button">
                 <div class="vpn-add-container07">
                   <img
@@ -171,7 +173,7 @@
                     src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
                     class="vpn-add-multiplication"
                   />
-                  <span class="vpn-add-text29"><span>Blacklist</span></span>
+                  <span class="vpn-add-text29"><span>VaultBot</span></span>
                 </div>
               </div>
             </a>
@@ -232,5 +234,19 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Show the popup if it exists
+        if ($('#loginErrorPopup').length) {
+            $('#loginErrorPopup').fadeIn();
+
+            // Hide the popup after 5 seconds
+            setTimeout(function() {
+                $('#loginErrorPopup').fadeOut();
+            }, 5000);
+        }
+    });
+</script>
   </body>
 </html>

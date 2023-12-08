@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="english">
   <head>
-    <title>exported project</title>
+    <title>cybervault</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
@@ -47,9 +47,9 @@
         <div class="chatbotdiscovery-chatbotcommand">
           <div class="chatbotdiscovery-menu">
             <span class="chatbotdiscovery-text">
-              <span class="chatbotdiscovery-text01">Cyber</span>
-              <span>Vault</span>
+              <span class="chatbotdiscovery-text01">Cyber</span><span>Vault</span>
             </span>
+            <a href="/">
             <div class="chatbotdiscovery-home button">
               <div class="chatbotdiscovery-container01">
                 <img
@@ -59,7 +59,8 @@
                 />
                 <span class="chatbotdiscovery-text03">Home</span>
               </div>
-            </div>
+            </div></a>
+            <a href="firewall">
             <div class="chatbotdiscovery-firewall button">
               <div class="chatbotdiscovery-container02">
                 <img
@@ -69,7 +70,8 @@
                 />
                 <span class="chatbotdiscovery-text04">Firewall</span>
               </div>
-            </div>
+            </div></a>
+            <a href="vpn">
             <div class="chatbotdiscovery-vpn button">
               <div class="chatbotdiscovery-container03">
                 <img
@@ -78,9 +80,9 @@
                   class="chatbotdiscovery-vpn1"
                 />
                 <span class="chatbotdiscovery-text05"><span>VPN</span></span>
-              </div>
+              </div></a>
             </div>
-            <a href="dns-over-httpsdis.html" class="chatbotdiscovery-navlink">
+            <a href="dns-over-httpsdis" class="chatbotdiscovery-navlink">
               <div class="chatbotdiscovery-dns button">
                 <div class="chatbotdiscovery-container04">
                   <img
@@ -94,6 +96,7 @@
                 </div>
               </div>
             </a>
+            <a href="logs">
             <div class="chatbotdiscovery-logs button">
               <div class="chatbotdiscovery-container05">
                 <img
@@ -103,34 +106,28 @@
                 />
                 <span class="chatbotdiscovery-text09"><span>Logs</span></span>
               </div>
-            </div>
+            </div></a>
+
+            <a href="chatbot-discovery">
             <div class="chatbotdiscovery-suggestions button">
               <div class="chatbotdiscovery-container06">
-                <span class="chatbotdiscovery-text11">Suggestions</span>
                 <img
-                  alt="Idea4229"
-                  src="{{ url_for('static', filename='public/external/idea4229-l48c-200h.png') }}"
-                  class="chatbotdiscovery-idea"
-                />
+                alt="Multiplication4229"
+                src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
+                class="chatbotdiscovery-multiplication"
+                 />
+               <span class="chatbotdiscovery-text12">
+                <span>VaultBot</span>
               </div>
             </div>
-            <div class="chatbotdiscovery-blacklist button">
-              <div class="chatbotdiscovery-container07">
-                <img
-                  alt="Multiplication4229"
-                  src="{{ url_for('static', filename='public/external/multiplication4229-h3z-200h.png') }}"
-                  class="chatbotdiscovery-multiplication"
-                />
-                <span class="chatbotdiscovery-text12">
-                  <span>Blacklist</span>
-                </span>
-              </div>
-            </div>
-            <div class="chatbotdiscovery-ids button">
-              <div class="chatbotdiscovery-container08">
-                <span class="chatbotdiscovery-text14"><span>IDS</span></span>
-                <div class="chatbotdiscovery-frameiconsetting4">
-                  <div class="chatbotdiscovery-group">
+            </a>
+            <a href="ids">
+             <div class="chatbotdiscovery-blacklist button">
+               <div class="chatbotdiscovery-container07">
+
+                 <span class="chatbotdiscovery-text14"><span>IDS</span>
+                  <div class="chatbotdiscovery-frameiconsetting4">
+                    <div class="chatbotdiscovery-group">
                     <img
                       alt="Vector4229"
                       src="{{ url_for('static', filename='public/external/vector4229-kbig.svg') }}"
@@ -161,10 +158,16 @@
                       src="{{ url_for('static', filename='public/external/vector4229-d3e.svg') }}"
                       class="chatbotdiscovery-vector5"
                     />
+                    </div>
                   </div>
+
                 </div>
               </div>
-            </div>
+
+            </a>
+
+
+            <a href="settings">
             <div class="chatbotdiscovery-settings button">
               <div class="chatbotdiscovery-container09">
                 <span class="chatbotdiscovery-text16">
@@ -175,7 +178,7 @@
                   src="{{ url_for('static', filename='public/external/gear4229-cdoj-200h.png') }}"
                   class="chatbotdiscovery-gear"
                 />
-              </div>
+              </div></a>
             </div>
           </div>
           <div class="chatbotdiscovery-container10">
@@ -207,28 +210,60 @@
     </div>
     <script>
     function sendMessage() {
-        var input = document.getElementById('user-input');
-        var message = input.value;
-        input.value = ''; // Clear the input after getting the value
+    var input = document.getElementById('user-input');
+    var message = input.value;
+    input.value = ''; // Clear the input after getting the value
 
-        if (message) {
-            appendMessage(message, true); // Add user's message to chat
+    if (message) {
+        appendMessage(message, true); // Add user's message to chat
+        showProcessingBubble();
 
-            // Send the message to your Flask server (Assuming POST request)
-            fetch('/send_message_discovery', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ message: message })
-            })
-            .then(response => response.json())
-            .then(data => {
+        // Send the message to your Flask server (Assuming POST request)
+        fetch('/send_message_discovery', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: message })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            hideProcessingBubble();
+            if (data.error) {
+                // Handle any error messages from the server
+                appendMessage(`Error: ${data.error}, Details: ${data.details}`, false);
+            } else {
                 appendMessage(data.reply, false); // Add bot's reply to chat
-            })
-            .catch(error => console.error('Error:', error));
-        }
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            hideProcessingBubble();
+            appendMessage('An error occurred while processing your message.', false); // Show generic error message
+        });
     }
+}
+
+    function showProcessingBubble() {
+    var chatBox = document.getElementById("chat-box");
+    var processingBubble = document.createElement("div");
+    processingBubble.classList.add("message-container", "processing-bubble");
+    processingBubble.innerHTML = '<div class="message bot-message">...</div>';
+    chatBox.appendChild(processingBubble);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function hideProcessingBubble() {
+    var processingBubble = document.querySelector(".processing-bubble");
+    if (processingBubble) {
+        processingBubble.remove();
+    }
+}
 
     function appendMessage(message, isUser) {
         var chatBox = document.getElementById('chat-box');
