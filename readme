@@ -1,3 +1,33 @@
+Setup Instructions
+
+This requires Ubuntu 23 Gnome Desktop to work
+
+1) Run these commands in respective order
+
+sudo apt-get update
+sudo apt-get ufw
+sudo apt-get install python3
+sudo apt install python3-pip
+sudo apt-get install mysql-server
+
+2) Now install the required python dependencies:
+
+sudo pip install Flask mysql-connector-python Werkzeug requests Flask-Talisman psutil scapy tensorflow scikit-learn pandas joblib
+sudo pip install tensorflow
+sudo pip install openai==0.28
+
+
+3) Now log in to mysql console and setup the databases:
+
+sudo mysql
+
+CREATE DATABASE cybervault_db;
+CREATE USER 'cybervault_user'@'localhost' IDENTIFIED BY 'your_password';
+GRANT ALL PRIVILEGES ON cybervault_db.* TO 'cybervault_user'@'localhost';
+FLUSH PRIVILEGES;
+
+USE cybervault_db;
+
 CREATE TABLE `dns_records` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -6,7 +36,7 @@ CREATE TABLE `dns_records` (
   `status` varchar(255) DEFAULT 'Not Active',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-)
+);
 
 CREATE TABLE `vpns` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -18,7 +48,7 @@ CREATE TABLE `vpns` (
   `status` varchar(255) DEFAULT 'Not Active',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-)
+);
 
 CREATE TABLE `users` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -26,7 +56,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `place_of_birth` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-)
+);
 
 CREATE TABLE `Firewall` (
   `firewallID` int NOT NULL AUTO_INCREMENT,
@@ -36,7 +66,7 @@ CREATE TABLE `Firewall` (
   `protocol` varchar(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `ppm` int DEFAULT NULL,
   PRIMARY KEY (`firewallID`)
-)
+);
 
 CREATE TABLE `IDS` (
   `eventID` int NOT NULL AUTO_INCREMENT,
@@ -46,7 +76,7 @@ CREATE TABLE `IDS` (
   `actionTaken` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`eventID`),
   UNIQUE KEY `attackIP` (`attackIP`)
-)
+);
 
 CREATE TABLE `Logs` (
   `logID` int NOT NULL AUTO_INCREMENT,
@@ -55,7 +85,7 @@ CREATE TABLE `Logs` (
   `logStatus` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `logDescription` varchar(1000) COLLATE utf8mb4_general_ci DEFAULT NULL,
   PRIMARY KEY (`logID`)
-)
+);
 
 CREATE TABLE `wifi` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -63,4 +93,21 @@ CREATE TABLE `wifi` (
   `password` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-)
+);
+
+3) Now setup nextdns
+
+curl -sSL https://nextdns.io/install | bash
+
+Say yes to all and for profile use this 253d7c
+
+4) Make changes to Cybervault_Capture_ufw.py
+
+Fix the file paths in line 23 to 28 for your folder setup
+Now in line 647, fix the interface to your system's correct interface that you want to run the IDS on.
+
+5) To run the Cybervault app, first open terminal and making the cybervault folder the working directory. 
+
+Then run sudo python3 app.py
+On your browser you can visit it from https://127.0.0.1
+Make sure to ignore the SSL warnings as its local certificates
