@@ -111,3 +111,6 @@ Now in line 647, fix the interface to your system's correct interface that you w
 Then run sudo python3 app.py
 On your browser you can visit it from https://127.0.0.1
 Make sure to ignore the SSL warnings as its local certificates
+
+
+6) IMPORTANT TO CHANGE THE API KEY FOR OPENAI in line 19 of app.py WITH THE ONE PROVIDED IN IMPORTANTFILE.TXT due to OPENAI detecting the API key in github. 
