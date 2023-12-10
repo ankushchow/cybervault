@@ -93,7 +93,7 @@ def insert_to_FW(src_ip, dst_port, status):
         cursor.close()
         conn.close()        
 
-# Log Table isert Function
+# Log Table insert Function
 def insert_to_LOG(event_time, status, desc):
     try:
         conn = get_db_connection()
